@@ -27,8 +27,10 @@ class Renderer: NSObject {
         metalView.device = device
         
         let mdlMesh = Primitive.makeLine(device: device, size: 1)
+        
         do{
             mesh = try MTKMesh(mesh: mdlMesh, device: device)
+//            mesh = Primitive.importObj(device: device, size: 1)
         } catch let error {
             print(error.localizedDescription)
         }
@@ -42,7 +44,7 @@ class Renderer: NSObject {
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
         pipelineDescriptor.vertexFunction = vertexFunction
         pipelineDescriptor.fragmentFunction = fragmentFunction
-        pipelineDescriptor.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mdlMesh.vertexDescriptor)
+        pipelineDescriptor.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mesh.vertexDescriptor)
         pipelineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat
         do {
             pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
@@ -85,7 +87,7 @@ extension Renderer: MTKViewDelegate {
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
         for submesh in mesh.submeshes {
-            renderEncoder.drawIndexedPrimitives(type: .point,
+            renderEncoder.drawIndexedPrimitives(type: .triangle,
                                                 indexCount: submesh.indexCount,
                                                 indexType: submesh.indexType,
                                                 indexBuffer: submesh.indexBuffer.buffer,

@@ -18,6 +18,7 @@
 		8B272EC0235FCC29007AE3EF /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B272EBF235FCC29007AE3EF /* Primitive.swift */; };
 		8B272EC2235FD066007AE3EF /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8B272EC1235FD066007AE3EF /* Shaders.metal */; };
 		8B272EC42367C033007AE3EF /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B272EC32367C033007AE3EF /* Vertex.swift */; };
+		8B272EC62367D2A9007AE3EF /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 8B272EC52367D2A9007AE3EF /* cube.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8B272EBF235FCC29007AE3EF /* Primitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
 		8B272EC1235FD066007AE3EF /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		8B272EC32367C033007AE3EF /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		8B272EC52367D2A9007AE3EF /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cube.obj; path = ../../cube.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8B272EA5235FC9CB007AE3EF /* AppDelegate.swift */,
 				8B272EA7235FC9CB007AE3EF /* SceneDelegate.swift */,
 				8B272EAB235FC9CD007AE3EF /* Assets.xcassets */,
+				8B272EC52367D2A9007AE3EF /* cube.obj */,
 				8B272EB0235FC9CD007AE3EF /* LaunchScreen.storyboard */,
 				8B272EB3235FC9CD007AE3EF /* Info.plist */,
 				8B272EAD235FC9CD007AE3EF /* Preview Content */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B272EB2235FC9CD007AE3EF /* LaunchScreen.storyboard in Resources */,
+				8B272EC62367D2A9007AE3EF /* cube.obj in Resources */,
 				8B272EAF235FC9CD007AE3EF /* Preview Assets.xcassets in Resources */,
 				8B272EAC235FC9CD007AE3EF /* Assets.xcassets in Resources */,
 				8B272EBC235FCAEA007AE3EF /* Main.storyboard in Resources */,
