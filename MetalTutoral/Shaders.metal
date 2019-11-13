@@ -30,3 +30,7 @@ vertex float4 vertex_main(const VertexIn vertexIn [[stage_in]]) {
 fragment float4 fragment_main() {
     return float4(1, 0, 0, 1);
 }
+
+fragment float4 fragment_main_test() {
+    return float4(1, 1, 0, 1);
+}

@@ -44,10 +44,10 @@ class ViewController: UIViewController {
                                 }
                             }, style: .push)
                         },
-                        Button("Triangle2", titleColor: .systemBlue, backgroundColor: .systemGray) {
+                        Button("Cube", titleColor: .systemBlue, backgroundColor: .systemGray) {
                             Navigate.shared.go(UIViewController {
                                 View {
-                                    MetalView(renderer: TriangleRenderer())
+                                    MetalView(renderer: MeshRenderer())
                                 }
                             }, style: .push)
                         },
