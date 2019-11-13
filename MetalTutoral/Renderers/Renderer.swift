@@ -36,6 +36,7 @@ protocol Renderer {
     
     func getMesh() -> MDLMesh
     func load(metalView: MTKView)
+    func configure(renderEncoder: MTLRenderCommandEncoder) -> MTLRenderCommandEncoder?
 }
 
 extension Renderer {
@@ -45,5 +46,29 @@ extension Renderer {
     
     var commandQueue: MTLCommandQueue {
         return MetalDevice.shared.commandQueue
+    }
+}
+
+// MARK: MTKViewDelegate
+extension Renderer {
+    //Called once per frame, regenerate the command buffer
+    func draw(metalView view: MTKView) {
+        guard let descriptor = view.currentRenderPassDescriptor,
+            let commandBuffer = self.commandQueue.makeCommandBuffer(),
+            let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: descriptor),
+            let configuredEncoder = configure(renderEncoder: renderEncoder) else {
+            return
+        }
+        
+        //drawing code goes here
+        configuredEncoder.endEncoding()
+       
+        guard let drawable = view.currentDrawable else {
+            return
+        }
+        
+        //Present and commit the drawable texture to the GPU
+        commandBuffer.present(drawable)
+        commandBuffer.commit()
     }
 }

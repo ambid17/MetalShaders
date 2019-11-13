@@ -21,6 +21,7 @@
 		8B272EC62367D2A9007AE3EF /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 8B272EC52367D2A9007AE3EF /* cube.obj */; };
 		8BEAAE8D237B9A2C005CDB8F /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEAAE8C237B9A2C005CDB8F /* SwiftUIKit */; };
 		8BEAAE90237BA22F005CDB8F /* TriangleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAAE8F237BA22F005CDB8F /* TriangleRenderer.swift */; };
+		8BEAAE92237BA956005CDB8F /* MeshRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAAE91237BA956005CDB8F /* MeshRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8B272EC32367C033007AE3EF /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		8B272EC52367D2A9007AE3EF /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cube.obj; path = ../../cube.obj; sourceTree = "<group>"; };
 		8BEAAE8F237BA22F005CDB8F /* TriangleRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleRenderer.swift; sourceTree = "<group>"; };
+		8BEAAE91237BA956005CDB8F /* MeshRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				8B272EBD235FCB42007AE3EF /* Renderer.swift */,
 				8BEAAE8F237BA22F005CDB8F /* TriangleRenderer.swift */,
+				8BEAAE91237BA956005CDB8F /* MeshRenderer.swift */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				8B272EC2235FD066007AE3EF /* Shaders.metal in Sources */,
 				8B272EC0235FCC29007AE3EF /* Primitive.swift in Sources */,
 				8B272EA8235FC9CB007AE3EF /* SceneDelegate.swift in Sources */,
+				8BEAAE92237BA956005CDB8F /* MeshRenderer.swift in Sources */,
 				8B272EBA235FCA56007AE3EF /* ViewController.swift in Sources */,
 				8B272EC42367C033007AE3EF /* Vertex.swift in Sources */,
 				8BEAAE90237BA22F005CDB8F /* TriangleRenderer.swift in Sources */,
