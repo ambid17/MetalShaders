@@ -8,18 +8,61 @@
 
 import UIKit
 import MetalKit
+import SwiftUIKit
+
+
+class MetalView: MTKView {
+    private var renderer: Renderer
+    
+    init(renderer: Renderer) {
+        self.renderer = renderer
+        
+        super.init(frame: .zero, device: renderer.device)
+        
+        self.renderer.load(metalView: self)
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 class ViewController: UIViewController {
-    var renderer: Renderer?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let metalView = view as? MTKView else {
-            fatalError("metal view not set up in story board")
+        Navigate.shared.configure(controller: navigationController)
+        
+        view.embed {
+            ScrollView {
+            VStack(withSpacing: 5, padding: 0, alignment: .fill, distribution: .fillProportionally) {
+                     [
+                        Button("Triangle", titleColor: .systemBlue, backgroundColor: .systemGray) {
+                            Navigate.shared.go(UIViewController {
+                                View {
+                                    MetalView(renderer: TriangleRenderer())
+                                }
+                            }, style: .push)
+                        },
+                        Button("Triangle2", titleColor: .systemBlue, backgroundColor: .systemGray) {
+                            Navigate.shared.go(UIViewController {
+                                View {
+                                    MetalView(renderer: TriangleRenderer())
+                                }
+                            }, style: .push)
+                        },
+                        Button("Triangle3", titleColor: .systemBlue, backgroundColor: .systemGray) {
+                            print("tri tapped3")
+                        }
+                    ]
+            }
+            .frame(height: 1000, width: Float(self.view.bounds.width))
+            }
         }
         
-        renderer = Renderer(metalView: metalView)
+                
+        
+                
     }
-
+    
 }

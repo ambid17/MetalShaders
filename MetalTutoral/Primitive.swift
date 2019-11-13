@@ -50,7 +50,7 @@ class Primitive {
         return mesh
     }
     
-    static func makeLine(device: MTLDevice, size: Float) -> MDLMesh {
+    static func makeTriangle(device: MTLDevice, size: Float) -> MDLMesh {
         let allocator = MTKMeshBufferAllocator(device: device)
         
         //create vertex buffer

@@ -15,12 +15,12 @@ struct VertexIn {
 };
 
 // Implement a vertex shader that returns the vertices passed in as a float4
-//vertex float4 vertex_main(const VertexIn vertexIn [[stage_in]], constant float &timer [[ buffer(1) ]]) {
-//    float4 position = vertexIn.position;
-//    position.x *= cos(timer);
-//    position.y *= sin(timer);
-//    return position;
-//}
+vertex float4 vertex_main_moving(const VertexIn vertexIn [[stage_in]], constant float &timer [[ buffer(1) ]]) {
+    float4 position = vertexIn.position;
+    position.x *= cos(timer);
+    position.y *= sin(timer);
+    return position;
+}
 
 vertex float4 vertex_main(const VertexIn vertexIn [[stage_in]]) {
     float4 position = vertexIn.position;

@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
 //            window.rootViewController = UIHostingController(rootView: contentView)
-            let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "metal")
+            let vc = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController()
             window.rootViewController = vc
             self.window = window
             window.makeKeyAndVisible()

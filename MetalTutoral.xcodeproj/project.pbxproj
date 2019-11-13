@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		8B272EC2235FD066007AE3EF /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8B272EC1235FD066007AE3EF /* Shaders.metal */; };
 		8B272EC42367C033007AE3EF /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B272EC32367C033007AE3EF /* Vertex.swift */; };
 		8B272EC62367D2A9007AE3EF /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 8B272EC52367D2A9007AE3EF /* cube.obj */; };
+		8BEAAE8D237B9A2C005CDB8F /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEAAE8C237B9A2C005CDB8F /* SwiftUIKit */; };
+		8BEAAE90237BA22F005CDB8F /* TriangleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAAE8F237BA22F005CDB8F /* TriangleRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		8B272EC1235FD066007AE3EF /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		8B272EC32367C033007AE3EF /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		8B272EC52367D2A9007AE3EF /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cube.obj; path = ../../cube.obj; sourceTree = "<group>"; };
+		8BEAAE8F237BA22F005CDB8F /* TriangleRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEAAE8D237B9A2C005CDB8F /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +72,7 @@
 		8B272EA4235FC9CB007AE3EF /* MetalTutoral */ = {
 			isa = PBXGroup;
 			children = (
+				8BEAAE8E237BA21B005CDB8F /* Renderers */,
 				8B272EA5235FC9CB007AE3EF /* AppDelegate.swift */,
 				8B272EA7235FC9CB007AE3EF /* SceneDelegate.swift */,
 				8B272EAB235FC9CD007AE3EF /* Assets.xcassets */,
@@ -77,7 +82,6 @@
 				8B272EAD235FC9CD007AE3EF /* Preview Content */,
 				8B272EB9235FCA56007AE3EF /* ViewController.swift */,
 				8B272EBB235FCAEA007AE3EF /* Main.storyboard */,
-				8B272EBD235FCB42007AE3EF /* Renderer.swift */,
 				8B272EBF235FCC29007AE3EF /* Primitive.swift */,
 				8B272EC1235FD066007AE3EF /* Shaders.metal */,
 				8B272EC32367C033007AE3EF /* Vertex.swift */,
@@ -91,6 +95,15 @@
 				8B272EAE235FC9CD007AE3EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BEAAE8E237BA21B005CDB8F /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				8B272EBD235FCB42007AE3EF /* Renderer.swift */,
+				8BEAAE8F237BA22F005CDB8F /* TriangleRenderer.swift */,
+			);
+			path = Renderers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +122,9 @@
 			dependencies = (
 			);
 			name = MetalTutoral;
+			packageProductDependencies = (
+				8BEAAE8C237B9A2C005CDB8F /* SwiftUIKit */,
+			);
 			productName = MetalTutoral;
 			productReference = 8B272EA2235FC9CB007AE3EF /* MetalTutoral.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 8B272E99235FC9CB007AE3EF;
+			packageReferences = (
+				8BEAAE8B237B9A2C005CDB8F /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
+			);
 			productRefGroup = 8B272EA3235FC9CB007AE3EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -172,6 +191,7 @@
 				8B272EA8235FC9CB007AE3EF /* SceneDelegate.swift in Sources */,
 				8B272EBA235FCA56007AE3EF /* ViewController.swift in Sources */,
 				8B272EC42367C033007AE3EF /* Vertex.swift in Sources */,
+				8BEAAE90237BA22F005CDB8F /* TriangleRenderer.swift in Sources */,
 				8B272EBE235FCB42007AE3EF /* Renderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8BEAAE8B237B9A2C005CDB8F /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zmeriksen/SwiftUIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8BEAAE8C237B9A2C005CDB8F /* SwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BEAAE8B237B9A2C005CDB8F /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = SwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B272E9A235FC9CB007AE3EF /* Project object */;
 }
